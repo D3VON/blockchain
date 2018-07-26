@@ -1,0 +1,10 @@
+Critical to make Your_First_Decentralized_Applicaiton work:
+
+
+--there's prolly a better way, but....
+
+--this is the correct dependancy for this code. 
+
+Be sure to run this before running anything:
+
+npm install ethereumjs-testrpc web3@0.20.1

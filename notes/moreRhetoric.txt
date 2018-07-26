@@ -1,0 +1,14 @@
+
+
+
+A smart contract is a program.  It's a program that runs in the blockchain. 
+
+Microsoft Excel is a program. You can use MS Excel to enter a single character and save that character to a file. But why would you limit yourself to doing just that? You can do so much more with Excel. 
+
+Likewise, smart contracts can do many things. 
+
+
+Implementing various functionality is so helpful because it feeds the imagination about what smart conctracts can do. At this time, we cannot tell you the breadth and depth of what they can do.  Suffice it to say that smart contracts have already been used to securitize cat bonds, without the involvement of an investment bank or bond clearing house. Indeed these block chain cat bonds have created an entirely new market for risk blah blah blah reinsurance.... bonds. and stuff. 
+
+
+

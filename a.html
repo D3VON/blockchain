@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Catastrophe Bond DApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <style>
+  div {
+      margin: 10px;
+          padding: 10px;
+  }
+
+  </style>
+</head>
+<body class="container">
+  <center>
+  <h1>Create Catastrophe Bond Smart Contract</h1>
+    <p><i>Minimal sample, to show transaction mechanism</i></p>
+    <table>
+      <!--thead>
+        <tr>
+          <th>Candidate</th>
+          <th>Votes</th>
+        </tr>
+      </thead -->
+      <tbody>
+        <tr>
+          <td><div align="right">Contract ID (hash code)</div></td>
+          <!--td id="candidate-1"><input type="text" name="fname1"></td -->
+          <td id="candhkidate-2"><input type="text" name="fname2"></td>
+        </tr>
+        <tr>
+          <td><div align="right">Term (in years)</div></td>
+          <td id="candhjkidate-2"><input type="text" name="fname2"></td>
+        </tr>
+        <tr>
+          <td><div align="right">Insured Amount</div></td>
+          <td id="candidhjkate-3"><input type="text" name="fname3"></td>
+        </tr>
+        <tr>
+          <td><div align="right">Start Date</div></td>
+          <td id="candidate-4"><input type="text" name="fname4"></td>
+        </tr>
+        <tr>
+          <td><div align="right">Premium Amount</div></td>
+          <td id="candidate-5"><input type="text" name="fname5"></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="hidden" id="candidate" value="1"/>
+
+  <a href="#" onclick="voteForCandidate()" class="btn btn-primary">Attach to Blockchain</a>
+</center>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="./index.js"></script>
+</html>

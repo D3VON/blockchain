@@ -1,0 +1,84 @@
+USE CASE Schpeel
+
+-------intro-------------------
+BULLETS: 
+o highly challenging
+o awesome team and cooperation among all CIC colleagues
+I think everyone at CIC has come to the consensus that the blockchain projects assigned to the intern teams this summer was particularly challenging, to say the least. For our team, it's been a fascinating process of learning, of studying, of discussing, narrowing down, refining and focusing, and of working.  
+-----------------------------
+
+
+---------learning experience--------------------------
+BULLET: 
+o list names of people we met with
+One of the principal ways we attacked the challenge was to tap into CIC's living corporate knowledge. We reach out to our very experienced colleagues here at CIC who were just great about guiding us, sharing their knowledge...
+---------------------------------------
+
+
+---------choices--------------------------
+o Reinsurance treaties, ceded
+o Catastrophe bonds
+o Securitization using blockchain
+o "just installed it and implemented it"
+Cutting to the chase, we identified two cases where blockchain could meaningfully be applied: reinsurance treaties, and catastrophe bonds. Initially, (seems like a long time ago now) Alan Wilson was the first to us the wonderful world of treaty reinsurance. As we learned more about this area, and more about blockchain, it seemed the best candidate. Jim Faust also met with us to further illucidate complicated world of risk transfer. 
+
+Nick, sort of our de facto team leader, kept pressing on, setting up meetings with other experienced CIC colleagues, which is really an example of how our team works: we keep pressing on. 
+
+Some other guy (______________) introduced us the alternative idea of catastrophe bonds. Long story short, these seemed more appropriate an issue to address because they seemed more straight-forward (come to find out in retrospect this isn't all that true).  
+
+Further research uncovered the bleeding edge work done by a small company called Solidum (apparently a Swiss company domiciled in Guernsey, UK), who less than a year ago completed the first settlement for cat bonds on the blockchain.  Indeed, it seems to be the very first real-world securities settlement using *any* blockchain ever on the planet. So we knew it was doable. 
+
+(Just as an asside, I would point out that other players, like the German company Allianz is implementing a blockchain for cat bonds; and there is already a secondary market trading Solidum's blockchain cat bonds.)
+
+-----conclusion--------------------
+BULLETS: 
+o Securitization using blockchain
+o Private blockchains may replace traditional settlement system. 
+ 
+Securitization of cat bonds are *already* being settled using a private blockchain. The success of these transactions illustrates how blockchain effectively *replaces* the role of the traditional settlement system. 
+
+We are thrilled and grateful to be tasked by CIC to explore this opportunity. We have tried to avoid all the hype, but this is one of the truly plausable, bleeding edge use cases. 
+
+We have come to realize discussions of blockchain have been overwhelmed with hype and outlandish promises. What we have hoped to accomplish with our use case is to illucidate the meaning of blockchain, and provide some kind of sandbox to expand CIC's internal, corporate knowledge of the technology. There's no better way to do that than to actually task us to implement it in a safe sandbox environment. 
+--------------------------
+
+
+
+
+
+========================================================================
+slides (use case selection):
+
+1------my intro-------------------
+BULLETS: 
+o highly challenging
+o awesome team and cooperation among all CIC colleagues
+
+2--------learning experience--------------------------
+BULLET: 
+o list names of people we met with
+
+3--------choices--------------------------
+o Reinsurance treaties, ceded
+o Catastrophe bonds
+o Securitization using blockchain
+o "just installed it and implemented it"
+
+4-----conclusion--------------------
+BULLETS: 
+o Securitization using blockchain
+o Private blockchains may replace traditional settlement system. 
+
+
+
+EXTRA STUFF====================================================
+
+
+That gentleman from the reinsurance company (solidia?) who "just installed it and tried it".  That represented a potentially achievable goal for us. But to belabor the refining perspective: at least half of our project was in mearly understanding what reinsurance is in detail, and that lead us to two possible use categories: ceding treaties, or <<doing>> catastrophe bonds.  The fact that Solidia, with its implementation of a cat bond using blockchain as a real investment vehicle, <<accomplished>> the first ever <<tradable security>> using blockchain on the planet, was most intreguing; and the fact that they accomplished it, was most encouraging.  The fact that there are very few players in the reinsurance market was also encouraging, in that the scope of the project would be very limited. In other words, the numbers are scary, but the actual implementation could be pleasingly modest, and relatively simple. 
+
+
+
+
+SUMMARY SCHPEEL (for Nick H.)
+===============
+We understand the blockchain projects assigned to the interns this summer have been particularly challenging in many dimensions. We have no illusions that our efforts will be used in production.  We only hope that we have made a good start in bringing knowledge in-house, and that we have provided some momentum to CIC to understand and eventually participate in this generational wave of technology. In the end, this entire process is characteristic of the kind of success CIC activates/engenders among all its associates, partners and stakeholders. 

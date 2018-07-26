@@ -1,0 +1,16 @@
+USE CASE Schpeel
+
+It's been a process of learning, and narrowing down, refining and focusing.  
+
+That gentleman from the reinsurance company (solidia?) who "just installed it and tried it".  That represented a potentially achievable goal for us. But to belabor the refining perspective: at least half of our project was in mearly understanding what reinsurance is in detail, and that lead us to two possible use categories: ceding treaties, or <<doing>> catastrophe bonds.  The fact that Solidia, with its implementation of a cat bond using blockchain as a real investment vehicle, <<accomplished>> the first ever <<tradable security>> using blockchain on the planet, was most intreguing; and the fact that they accomplished it, was most encouraging.  The fact that there are very few players in the reinsurance market was also encouraging, in that the scope of the project would be very limited. In other words, the numbers are scary, but the actual implementation could be pleasingly modest, and relatively simple. 
+
+
+
+IMPLEMENTATION SHPEEL / IDEAS:
+=============================
+
+In order to make our project test cast meaningful, it is necessary to set up servers alien to our company's machines, to immitate other entities interacting with the blockchain who are not controled by CIC. 
+
+SUMMARY SCHPEEL
+===============
+We understand the blockchain projects assigned to the interns this summer have been particularly challenging in many dimensions. We have no illusions that our efforts will be used in production.  We only hope that we have made a good start in bringing knowledge in-house, and that we have provided some momentum to CIC to understand and eventually participate in this generational wave of technology. In the end, this entire process is characteristic of the kind of success CIC activates/engenders among all its associates, partners and stakeholders. 

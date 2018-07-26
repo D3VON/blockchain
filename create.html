@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="catastrophe bond on blockchain example app">
+    <meta name="author" content="Devon McBride">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Catastrophe Bond DApp</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="create.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Skyline Re Ltd.</h1>
+        <p><i>Example to test smart contract mechanism</i></p>
+
+      <div id="spa">
+
+        <form class="form-create">
+          <h2 class="form-create-heading">Create Catastrophe Bond</h2>
+
+          <table id="the-table">
+            <tbody>
+              <tr>
+                <td><div align="right">Issuer</div></td>
+                <!--td id="candidate-1"><input type="text" name="fname1"></td -->
+                <td id="issuer"><input type="text" class="form-control" name="issuer" value="Skyline Re Ltd., Series 2018-1"></td>
+              </tr>
+              <tr>
+                <td><div align="right">Contract ID (hash code)</div></td>
+                <!--td id="candidate-1"><input type="text" class="form-control" name="fname1"></td -->
+                <td id="contracthash"><input type="text" class="form-control" name="contracthash" value="hjk3d95s"></td>
+              </tr>
+              <tr>
+                <td><div align="right">Cedent / Sponsor</div></td>
+                <!--td id="candidate-1"><input type="text" class="form-control" name="fname1"></td -->
+                <td id="cedent"><input type="text" class="form-control" name="cedent" value="The Cincinnati Insurance Company"></td>
+              </tr>
+              <tr>
+                <td><div align="right">Risks / Perils covered</div></td>
+                <!--td id="candidate-1"><input type="text" class="form-control" name="fname1"></td -->
+                <td id="risk"><input type="text" class="form-control" name="risk" value="U.S. convective storm (excluding Florida)"></td>
+              </tr>
+              <tr>
+                <td><div align="right">Size</div></td>
+                <!--td id="candidate-1"><input type="text" class="form-control" name="fname1"></td -->
+                <td id="size"><input type="text" class="form-control" name="size" value="$180,000,000"></td>
+              </tr>
+              <tr>
+                <td><div align="right">Term (in years)</div></td>
+                <td id="term"><input type="text" class="form-control" name="term" value="3"></td>
+              </tr>
+              <tr>
+                <td><div align="right">Date of issue</div></td>
+                <td id="issuedate"><input type="text" class="form-control" name="issuedate" value="08-01-2018"></td>
+              </tr>
+              <tr>
+                <td><div align="right">Trigger type</div></td>
+                <td id="triggertype"><input type="text" class="form-control" name="triggertype" value="Indemnity"></td>
+              </tr>
+              <tr>
+                <td><div align="right">Upper Limit</div></td>
+                <td id="issuedate"><input type="text" class="form-control" name="issuedate" value="$700,000,000"></td>
+              </tr>
+              <tr>
+                <td><div align="right">Lower Limit</div></td>
+                <td id="triggertype"><input type="text" class="form-control" name="triggertype" value="$600,000,000"></td>
+              </tr>
+            </tbody>
+          </table>
+          <!--input type="hidden" id="candidate" value="1"/ -->
+          <a href="#" onclick="createCatBond()" class="btn btn-primary">Attach to Blockchain</a>
+
+
+        </form>
+      </div>
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

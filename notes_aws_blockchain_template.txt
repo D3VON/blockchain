@@ -1,0 +1,362 @@
+Blockchain information, AWS ethereum template set up. 
+
+Bastion host ssh login:
+ssh -i "~/woof.pem" ec2-user@18.217.26.222 -D 9001
+
+See also on work computer: notesAboutBlockchain.txt
+
+
+Rhetoric
+==========================
+We respect your time--and more importantly your attention and mental effort--so we've tried to eliminate boring, cryptic definitions from our presentation. What's written about blockchain is largely very repetative hype, really of no use. Accordingly, we've chosen some crucial insights that were helpful for us, and we think you may also find useful. 
+
+For example, an analogy: when smartphones came out a decade ago, the hype at that time was the search for a so-called 'killer app'.  With blockchain, that killer app is cryptocurrencies. But that doesn't mean that's the only thing blockchain is useful for. In our presentation we will make no further mention of any cryptocurrency. 
+
+18.220.219.91:8545
+18.220.219.91
+
+
+../../
+/var/www/html
+
+
+Contract Law
+============
+Most contracts only need to contain two elements to be legally valid:
+
+    1. All parties must be in agreement
+    2. Something of value must be exchanged
+
+All the other fancy stuff, like notarization, recording at the courthouse, attorney fees; those are helpful to prove, but not required to prove that a contract is valid.  Even a verbal contract is valid, but more difficult to prove in court. 
+
+
+What does "distributed ledger" mean?
+===================================
+I might say instead 'duplicated ledger'. Every participant has a duplicate of everything. 
+every participant has a perfect copy of the entire blockchain, also called the ledger. 
+
+Encryption Rhetoric:
+===================
+--Hyperledger: secure, private access to records--like a public post office, where chosen participans have a key to a PO Box.
+--Docs are encrypted with symmetric encription, meaning there's only one key to both encrypt and decrypt, which the encrypter secretly shares with the decrypters. That key would be stored in the record (the PO Box) on the blockchain (the post office). 
+
+
+
+
+
+
+
+Our installation, Rhetoric:
+==========================
+"The build your first network (BYFN) scenario provisions a sample Hyperledger Fabric network consisting of two organizations, each maintaining two peer nodes, and a “solo” ordering service."1
+
+"... leverages these Docker images to quickly bootstrap a Hyperledger Fabric network comprised of 4 peers representing two different organizations, and an orderer node. It will also launch a container to run a scripted execution that will join peers to a channel, deploy and instantiate chaincode and drive execution of transactions against the deployed chaincode."1
+
+
+Use Case rhetoric:
+=================
+We don't foresee displacing associates here at CIC; rather our concept of CAT bonds built on blockchain would facilitate existing operations and potentially create new opportunities internally. 
+
+
+rtsp://admin:thecastl@192.168.1.133:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif
+
+General blockchain notes:
+===============================================================================
+
+FIRST, LET'S BREAK A COUPLE OF ASSUMPTIONS YOU MAY HAVE. BLOCKCHAIN IS NOT CRYPTOCURRENCY. CRYPTO CURRENCY IS AN EXAMPLE OF A "KILLER APP" BUILT ON BLOCKCAIN. 
+
+You don't store documents in blockchain (e.g. pdf, spreadsheet, photos). You store a cryptographic fingerprint of the document (i.e., its hash) of the document that identify its version, its binary state.  Store the file elsewhere, as accessible is needed, and later you can verify by compairing its hash with that stored in the blockchain. 
+
+Blockchain provides 4 key characteristics:
+1. consensus: everyone has to agree on changes that get recorded on the ledger
+2. provenance: track the history of an asset; see where it came from
+3. immutability: once something is recorded on the block chain, it's there 
+forever
+    -->say there's a mistake in the transaction: have to create another record
+    that fixes the previous record. IOW, there is no concept of delete or update
+    in Hyperledger. You cannot alter any data in Hyperledger. 
+4. finality: bc is the single source of truth
+
+There is no concept of delete or update in Hyperledger
+
+Blockchain also defines the order of records. 
+
+Can "replay" the ledger to reach the "current world state". 
+
+Bitcoin is a blockchain application (the first big one, actually). 
+
+We are not interested in Bitcoin or cryptocurrency; we are interested in the technology that underpins Bitcoin.
+
+Blockchain for business differs from blockchain for cryptocurrencies in a couple key areas:
+1. identity of participants is important; reputation is at stake;
+2. PoW isn't needed because participants are limited; only parties interested in a transaction (buyer, seller, regulator, bank...) sign off on a transaction before it gets recorded to the blockchain. 
+3. We are interested in tracking assets, not just a coins.  
+
+Hyperledger is like an operating system for marketplaces, data sharing networks, used by a consortium of organizations. 
+
+Hyperledger isn't a cryptocurrency. 
+
+There is no "mining" in hyperledger. 
+
+Hyperledger is much faster than Ethereum and Bitcoin. Bitcoin can process about 3 transactions per second; ethereum can process 6 per second. Hyperledger can processes about half a million transactions per second. 
+
+Unlike cryptocurrencies, Hyperledger is generally permissioned, not anonymous. 
+
+Like cryptocurrencies, Hyperledger is an immutable ledger, which is append-only, and distributed among the participants of the consortium. 
+
+Hyperledger features privacy of transactions through permissioned access. 
+
+Hyperledger features smart contracts to handle processing transaction requests. 
+
+Hyperledger can be configured with the consensus module that best suits our needs, and therefore can avoid (for example) the very costly (not sure if this is the costly part, actually) Proof of Work (PoW) consensus model. 
+
+
+
+Hyperledger is a project started by the Linux Foundation intended for businesses. IBM is a premier member of the Hyperledger Project, as is SAP, Accenture, Intel, JPMorgan, American Express, Daimler, Cisco, Intuit, and over 100 more...
+
+Composer is a framework. Blockchain is very new and difficult to build solutions ontop of, so a framwork like Composer allows for quick development of applications using a business-centric vocabulary (for example, instead of focusing on key-value maps, we talk in terms of assets, participants, and transactions). 
+
+Many participants shouldn't even know they're using the blockchain.
+
+
+Pain point: settlement process between parties is eliminated. (Even more difficult if working internationally.)
+
+3 main components of Hyperledger: <---all three run in Docker containers
+================================
+1. Fabric CA (cert. authority): every single operation in Hyperledger must be signed. 
+--generates certs
+--creates accounts (register username, attributes, password, affiliation..)
+    -->this creation of accounts is called "enrollment"
+--Fabric CA can be attached to LDAP or Act.Dir.
+--(can instead generate certs yourself using OpenSSL. Or use LetsEncrypt, etc.)
+--certs can have attributes (also immutable)
+
+2. Peer: blockchain (ledger) is stored here. 
+--endorces and updates blockchain
+--every peer syncs automatically.
+--receives blocks from the Ordering Service, adds these blocks to ledg.
+--one peer can control many channels
+
+3. Ordering Service: (we will use solo service)
+--maintains order of operations. --which is before, which is after another. 
+--responsible for verification, security, policy mgt., etc...
+--creates the blocks 
+--orders transactions within the block
+--can have a solo orderer for development and testing
+--(production OrdServ based on Apache Kafka, and is also distributed)
+
+What is a "channel" in Hyperledger?
+==================================
+--No other blockchain has this concept, only Hyperledger. 
+--It's how hyperledger isolates information and policies among participants. 
+--Like a separate, encrypted chatroom. 
+--Every peer/participant/party must be joined to a channel to do anything. 
+--One peer may be in many channels
+--Every channel peer must approve a new participant (every party has veto power)
+--Every channel is completely independent. 
+--Acts like a duplicate instance of Hyperldger Fabric. 
+
+
+What is a "chaincode" in Hyperledger?
+=====================================
+-- chain code = smart contract in Hyperledger
+--it's a program that reads and updates the ledger data
+--it is stand-alone process, so it must have a main() function. 
+--peers execute chaincode
+--has to be installed in every peer (every ledger)
+--has to be instantiated it to init the chaincode (make connections, security verifications, etc). 
+--have to provide a "policy" (endorcement policy) (see section on that below)
+--chaincode must be made of pure functions--never rely on filesystem data, network operations, or some other non-deterministic operation: because the operation is executed on every single peer. so what happens when you rely on a network connection, but that connection fails for one peer?  The result for one simulation will be different for one peer so the whole operation will be rejected. So chaincode can only rely on 3 things:
+    1. arguments <--provide anything you need here. 
+    2. certificate and its attributes
+    3. current state of the ledger
+
+What is an "endorsement policy" in the chaincode in Hyperledger?
+===============================================================
+--When an operation is executed, it must be verified before it can be written into the ledger. 
+A policy could say: before you update the ledger or execute something, every peer on the network has to verify the transaction before committing to the ledger; or majority must verify; or majority plus a specific peer; or at least one. 
+--every chaincode has a policy
+
+What is Hyperledger's MSP Membership Service Providers?
+======================================================
+--The peer itself needs certificates that share certain properties with...
+--Only peers that are members of the same MSP organization can see eachother and gossip with a gossip protocol. 
+--Adding a new peer to the organization means it needs a certificate with the right properties. 
+--When you config a channel, you need to put into the channel configuration block the public keys of members.
+--when you start the peer, you have to provide the peer an MSP ID (at least one). 
+
+
+=============================================================================
+WHEN I FINISHED RUNNING THE "BUILD YOUR FIRST NETWORK" (BYFN) SCRIPT, 
+I HAVE A PERFECT ENVIRONMENT TO RUN A PRODUCTION-GRADE HYPERLEDGER FABRIC.
+=============================================================================
+
+positive and negative points about blockchain
+
+===============================================================================
+
+the ability to run analytics on the Hyperledger
+
+"HyperLedger is an open source Apache blockchain initiative that IBM has been spearheading."1
+
+"Each participant needs a node, which is the entry point into the blockchain"1
+
+"organizations should use it only when they have challenges that aren’t addressed well by existing technology."1
+
+"Blockchain’s energy costs and storage requirements, as well as the uncertainty that accompanies any nascent technology, make it a far less scalable solution than existing databases."1
+
+"Bitcoin cost per transaction has been bouncing around between $75 and $160 since the beginning of the year, in large part due to electricity costs – for a single transaction."1
+
+"A business case for blockchain must account for a host of potential costs beyond hosting, licensing, and implementation"1
+
+"a buffer for unknown-unknowns and perhaps a ‘complexity premium’ should be added."1
+
+Our proposed private blockchain use case will require a blockchain of miniscule size.
+
+We do not expect our implementation to be put into effect:
+
+"Today, most if not all enterprise blockchain initiatives are in the proof of concept phase – and even though a few have had positive results, none of them have attempted to scale up or run for long periods of time."1
+
+"AWS templates are certified to work as open-source frameworks, which allow easy, instant deployment and configuration of blockchain software that helps a business create their own instance of a decentralized network as per their choice."2
+
+"blockchain technology as applied to humanitarian aid"3
+
+(see that article for Use Case rhetoric)
+
+Using cat bonds in place of reinsurance treaties means not only do we not have to pay a premium up front, but we raise substantial amounts of money up front.
+
+The narrow scope of our sheltered sandbox necessarily means we cannot predict the full impact of a blockchain implementation, nor the scope and nature of side effects. These are unknown unknowns. Our goal is to push the technology in a meaningful direction, in a safe way, to cause those side effects, whether beneficial or otherwise, to show themselves.
+
+
+"The Hyperledger Project is a new open source effort supported by dozens of banks, insurance companies, and large manufacturers"4
+
+"Leading supporters of the Hyperledger Project include financial companies such as American Express, JPMorgan Chase & Co., the London Stock Exchange and Wells Fargo. "4
+
+"Distributed ledger technology will unlock the full 'digital' potential of capital markets and the wider financial services industry by enabling a shift away from the current reconciliation-based systems that are very expensive and highly inefficient."4
+
+It may well turn out CIC will simply use some intermediary's implemented blockchain, perhaps merely adding its own smart contracts to that to accomplish its reinsurance functions.
+
+That intermediary could be a bank, trustee, or broker. Nevertheless, it is incumbent upon CIC to grow the collective knowledge of its associates regarding blockchain.
+
+"... four stages to a blockchain implementation, and they apply no matter the industry a company is in: In Stage 1, a use case is identified and a technology plan scoped out. Stage 2 is a proof of concept (POC). Stage 3 is a field trial, which involves a limited-production run with customer-facing data, which is stepped up to involve more customer-facing products and data volumes, he said. And Stage 4 is a full-volume rollout in production. Almost no organizations have reached Stage 4, Garzik said."5
+
+"When it comes to Stage 1, "the most pragmatic question [for IT to ask about blockchain] is, 'To what products does blockchain apply, but more pragmatically, how does blockchain not apply?'" 5
+
+
+could use Blockchain-as-a-Service (BaaS)
+ 
+
+Brochure:
+
+========
+
+--more negative space, less difficult to understand words
+
+DECENTRALIZED: Each participant has a canonical copy of every record
+
+SECURE: Strongest encryption available on the planet, strong isolation of information and policies among participants.
+
+TRUSTWORTHY: Each participant has 'veto power' over any
+
+ 
+
+ 
+
+ 
+
+========================endnotes===============================================
+
+ 
+
+https://composer-playground.mybluemix.net/editor
+
+https://hyperledger.github.io/composer/latest/tutorials/playground-tutorial.html
+
+https://hyperledger.github.io/composer/latest/installing/installing-prereqs#ubuntu
+
+https://hyperledger.github.io/composer/latest/installing/development-tools.html
+
+https://www.slideshare.net/kesavannb/setting-up-the-hyperledger-composer-in-ubuntu
+
+ 
+
+search terms: hyperledger composer setup ubuntu
+
+ 
+
+awesome indian guy shows how to make a DAPP voting app
+
+https://www.youtube.com/watch?v=gSQXq2_j-mw
+
+ 
+
+Awesomest hyperledger tutorial (IBM guy)
+
+https://www.youtube.com/watch?v=gAxK6zYrfxI
+
+ 
+
+hyperledger composer tutorial / Hyperledger Composer Tutorial - Setup
+
+https://www.youtube.com/watch?v=U-lKGD96gzw
+
+ 
+
+SUPERB ARTICLE SUPERB ARTICLE SUPERB ARTICLE SUPERB ARTICLE SUPERB ARTICLE SUPERB ARTICLE SUPERB ARTICLE SUPERB ARTICLE
+
+First ever use of b.c. for CAT bond:
+
+http://www.artemis.bm/blog/2017/08/04/first-blockchain-settlement-for-cat-bond-completed-by-solidum/
+
+ 
+
+ 
+
+CLEAR DISCUSSION OF CAT BONDS:
+
+https://www.investopedia.com/terms/c/catastrophebond.asp
+
+ 
+
+aws cost estimator
+
+https://aws.amazon.com/marketplace/pp/B0797GK9YY
+
+ 
+
+1. https://www.forbes.com/sites/jasonbloomberg/2018/02/24/dont-let-blockchain-cost-savings-hype-fool-you/#60e6dca75811
+
+ 
+
+ 
+
+ 
+
+2. https://www.investopedia.com/news/all-about-amazons-new-blockchain-service/
+
+ 
+
+3. https://www.ethnews.com/blockchain-catastrophe-bonds-and-the-future-of-disaster-relief
+
+ 
+
+...good article if we want to address pitfalls in our presentation
+
+4. https://searchcloudapplications.techtarget.com/news/450413312/What-developers-need-to-know-about-the-Hyperledger-Project
+
+ 
+
+5. https://searchcio.techtarget.com/feature/Step-by-step-guide-to-a-blockchain-implementation
+
+
+
+
+
+
+ENDNOTES AND LINKS:
+
+hyperledger-fabric.readthedocs.io
+
+1. http://hyperledger-fabric.readthedocs.io/en/release-1.2/build_network.html
+
+

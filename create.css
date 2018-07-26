@@ -1,0 +1,51 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+  text-align: center;
+}
+
+.form-create {
+  max-width: 600px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#the-table {
+   display: table;
+   width: 100%;
+}
+
+.form-create .form-create-heading,
+.form-create .checkbox {
+  margin-bottom: 10px;
+}
+.form-create .checkbox {
+  font-weight: normal;
+}
+.form-create .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-create .form-control:focus {
+  z-index: 2;
+}
+.form-create input[type="text"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-create div {
+  margin-bottom: 5px;
+  padding-right: 5px;
+}
+
+.form-create .btn {
+  margin: 15px;
+  background-color: #004D71;
+}
